@@ -140,11 +140,13 @@ export default {
   },
   methods: {
     saveDay: function () {
+
       let answersTimeZone = this.answers
       const qDay = 7;
       const qPeriod = 48;
       const date = new Date()
       const offset = +(-date.getTimezoneOffset() / 30)
+      console.log(`Current Data GMT:${-(date.getTimezoneOffset()/60)}`, this.answers)
       answersTimeZone = answersTimeZone.map(item => {
         item = item.split('-')
         if(item[1] - offset > qPeriod || item[1] - offset <= 0){
@@ -160,6 +162,7 @@ export default {
         }
         return item.join('-')
       })
+      console.log(`Current Data GMT:0`,answersTimeZone)
     },
     checkSelectedDay: function () {
       let val = this.answers.map(item => {
@@ -174,6 +177,7 @@ export default {
     },
   },
   mounted() {
+    console.log('Entry Values GMT:0', this.reserved)
     this.answersValues
   }
 }
