@@ -55,7 +55,7 @@ export default {
             item[1] = (item[1] - offset) - qPeriod
           } else {
             item[0] = item[0] - 1 <= 0 ? 7 : --item[0]
-            item[1] = qPeriod - item[1] - offset - 1
+            item[1] = qPeriod - (offset - item[1])
           }
         } else {
           item[1] = +item[1] - offset
@@ -153,14 +153,13 @@ export default {
             item[1] = (item[1] - offset) - qPeriod
           } else {
             item[0] = item[0] - 1 <= 0 ? 7 : --item[0]
-            item[1] = qPeriod - item[1] - offset - 1
+            item[1] = qPeriod - (offset - item[1])
           }
         } else {
           item[1] = +item[1] - offset
         }
         return item.join('-')
       })
-      console.log(answersTimeZone)
     },
     checkSelectedDay: function () {
       let val = this.answers.map(item => {
