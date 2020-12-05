@@ -25,12 +25,9 @@
       </div>
       <div class="calendar-day-footer">
         <button class="calendar-day-footer-btn" v-on:click="saveDay">Save</button>
-
       </div>
     </div>
-
   </v-sheet>
-
 </template>
 
 <script>
@@ -140,7 +137,6 @@ export default {
   },
   methods: {
     saveDay: function () {
-
       let answersTimeZone = this.answers
       const qDay = 7;
       const qPeriod = 48;
